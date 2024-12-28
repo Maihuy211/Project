@@ -3,13 +3,15 @@
 #include "datatypes.h"
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 int main(int argc, char *argv[]) {
-    int choice, choice2, choice3;
-    int studentCount = 0;
+    int choice, choice2, choice3, choice5;
+    int studentCount= 0;
+    int teacherCount= 0;
     struct Student students[50]={
     	{21, "ENG24C", "Mai Van Huy", {25, 11, 2006}, 1, "maihuylc@gmail.com", "0971235256", "pass123"},
         {20, "ENG24D", "Nguyen Van A", {1, 11, 2006}, 1, "abce123@gmail.com", "0987654321", "pass124"},
         {23, "ENG24E", "Nguyen Van B", {6, 5, 2006}, 1, "abcd123@gmail.com", "0987654322", "pass125"}
     };
+    struct Teacher teachers[50];
     do {
         menuStart();
         printf("\tEnter the Choice: ");
@@ -53,6 +55,42 @@ int main(int argc, char *argv[]) {
                                 }
                             }while(choice3!=0);
                             break;
+                        case 2:
+                        	break;
+                        case 3:
+                        	do{
+                        		menuTeacher();
+                        		printf("\tEnter your choice: ");
+                                scanf("%d", &choice5);
+                                switch(choice5){
+                                	case 1:
+                                		addTeacher(&teacherCount, teachers);
+                                		break;
+                                	case 2:
+                                		printHeader2();
+                                        printTeacher(teacherCount, teachers);
+                                		break;
+                                	case 3:
+                                    	deleteTeacher(&teacherCount, teachers);
+                                    	break;
+                                    case 4:
+                                    	editTeacher(teacherCount, teachers);
+                                    	break;
+                                    case 5:
+                                    	searchTeacher(teacherCount, teachers);
+                                    	break;
+                                    case 6:
+                                    	sortTeachersByName(teacherCount, teachers);
+                                    	break;
+                                	case 7:
+                                		break;
+                                	case 0:
+                                		break;
+                                	default:
+                                		printf("\tERROR: Please try again.\n");	
+                                }
+							}while(choice5!=0);
+                        	break;
                         case 0:
                             break;
                         default:
