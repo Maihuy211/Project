@@ -3,13 +3,13 @@
 #include "datatypes.h"
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 int main(int argc, char *argv[]) {
-    int choice, choice2, choice3, choice5;
-    int studentCount= 0;
-    int teacherCount= 0;
+    int choice, choice2, choice3, choice5, choice7;
+    int studentCount= 3;
+    int teacherCount= 3;
     struct Student students[50]={
-    	{21, "ENG24C", "Mai Van Huy", {25, 11, 2006}, 1, "maihuylc@gmail.com", "0971235256", "pass123"},
-        {20, "ENG24D", "Nguyen Van A", {1, 11, 2006}, 1, "abce123@gmail.com", "0987654321", "pass124"},
-        {23, "ENG24E", "Nguyen Van B", {6, 5, 2006}, 1, "abcd123@gmail.com", "0987654322", "pass125"}
+    	{1, "Mai Van Huy", "ENG24C", {25, 11, 2006}, 1, "maihuylc@gmail.com", "0971235256", "pass123"},
+        {2, "Nguyen Van A" ,"ENG24D" , {1, 11, 2006}, 0, "abce123@gmail.com", "0987654321", "pass124"},
+        {3, "Nguyen Van B", "ENG24E", {6, 5, 2006}, 0, "abcd123@gmail.com", "0987654322", "pass125"}
     };
     struct Teacher teachers[50];
     do {
@@ -56,6 +56,33 @@ int main(int argc, char *argv[]) {
                             }while(choice3!=0);
                             break;
                         case 2:
+                        	do{
+                        		menuClass();
+                        		printf("\tEnter your choice: ");
+                                scanf("%d", &choice7);
+                                switch(choice7){
+                                	case 1:
+                                		break;
+                                	case 2:
+                                		break;
+                                	case 3:
+                                		break;
+                                	case 4:
+                                		break;
+                                	case 5:
+                                	    break;
+                                	case 6:
+                                	    break;
+                                	case 7:
+                                		break;
+                                	case 8:
+                                		break;
+                                	case 0:
+                                		break;
+                                	default:
+                                		printf("\tERROR: Please try again.\n");
+                                }
+							}while(choice7!=0);
                         	break;
                         case 3:
                         	do{
@@ -80,10 +107,7 @@ int main(int argc, char *argv[]) {
                                     	searchTeacher(teacherCount, teachers);
                                     	break;
                                     case 6:
-                                    	sortTeachersByName(teacherCount, teachers);
                                     	break;
-                                	case 7:
-                                		break;
                                 	case 0:
                                 		break;
                                 	default:
