@@ -7,11 +7,15 @@ int main(int argc, char *argv[]) {
     int studentCount= 3;
     int teacherCount= 3;
     struct Student students[50]={
-    	{1, "Mai Van Huy", "ENG24C", {25, 11, 2006}, 1, "maihuylc@gmail.com", "0971235256", "pass123"},
-        {2, "Nguyen Van A" ,"ENG24D" , {1, 11, 2006}, 0, "abce123@gmail.com", "0987654321", "pass124"},
-        {3, "Nguyen Van B", "ENG24E", {6, 5, 2006}, 0, "abcd123@gmail.com", "0987654322", "pass125"}
+    	{"1","ENG24C","Mai Van Huy", {25, 11, 2006}, 1, "maihuylc@gmail.com", "0971*****", "pass123"},
+        {"2","ENG24D","Nguyen Van A", {21,10, 2006}, 1, "abce123@gmail.com", "0987654321", "pass124"},
+        {"3","ENG24E","Nguyen Van B", {6, 5, 2006}, 1, "abcd123@gmail.com", "0987654322", "pass125"}
     };
-    struct Teacher teachers[50];
+    struct Teacher teachers[50]={
+        {"1","ENG24D","Nguyen Van A", {2,30,1998}, 1, "abct123@gmail.com", "098765444", "pass124"},
+        {"2","ENG24E","Nguyen Van B", {6,5,2000}, 1, "abcf123@gmail.com", "0987654345", "pass156"},
+        {"3","ENG24V","Nguyen Van C", {6,5,2000}, 1, "aocf123@gmail.com", "0986745464", "pass116"},
+    };
     do {
         menuStart();
         printf("\tEnter the Choice: ");
@@ -107,6 +111,7 @@ int main(int argc, char *argv[]) {
                                     	searchTeacher(teacherCount, teachers);
                                     	break;
                                     case 6:
+                                    	
                                     	break;
                                 	case 0:
                                 		break;
@@ -127,7 +132,7 @@ int main(int argc, char *argv[]) {
             case 3:
                 break;
             case 0:
-                printf("\tExiting program...\n");
+                endProgram();
                 saveStudentToFile(studentCount, students);
                 break;
             default:

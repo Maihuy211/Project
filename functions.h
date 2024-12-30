@@ -22,3 +22,4 @@ void deleteTeacher(int *length, struct Teacher tv[]);
 void editTeacher(int length, struct Teacher tv[]);
 void searchTeacher(int length, struct Teacher tv[]);
 void menuClass();
+void endProgram();

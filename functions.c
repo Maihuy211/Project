@@ -31,12 +31,12 @@ void menuStudents(){
     printf("\n");
     printf("\t    STUDENT MENU\n");
     printf("\t======================\n");
-    printf("\t[1] Add A new student.\n");
-    printf("\t[2] Show All students.\n");
-    printf("\t[3] Delete A student.\n");
-    printf("\t[4] Edit A student.\n");
-    printf("\t[5] Search A student.\n");
-    printf("\t[6] Sort A student.\n");
+    printf("\t[1] Add A new Student.\n");
+    printf("\t[2] Show All Students.\n");
+    printf("\t[3] Delete A Student.\n");
+    printf("\t[4] Edit A Student.\n");
+    printf("\t[5] Search A Student.\n");
+    printf("\t[6] Sort A Student.\n");
     printf("\t[0] Back.\n");
     printf("\t======================\n");
 }
@@ -116,7 +116,7 @@ void addStudent(int *length, struct Student sv[]){
 	            valid = 0;
 	        }
 	        for(j=0;j<i;j++){
-	            if(strcmp(sv[i].phone, sv[j].phone) == 0){
+	            if(strcmp(sv[i].phone,sv[j].phone) == 0){
 	                printf("Invalid Phone. Please enter a unique Phone.\n");
 	                valid = 0;
 	                break;
@@ -132,14 +132,14 @@ void addStudent(int *length, struct Student sv[]){
 }
 void printHeader(){
 	printf("\n\t  ***All Student***\n");
-    printf("|============|=============|============================|=======================|============|============================|=====================|=====================|\n");
-    printf("| ID         | ID Class    | FullName                   | Date Of Brith         | Gender     | Email                      | Phone               | Password            |\n");
-    printf("|============|=============|============================|=======================|============|============================|=====================|=====================|\n");
+    printf("|============|=============|============================|=======================|============|============================|=====================|\n");
+    printf("| ID         | ID Class    | FullName                   | Date Of Brith         | Gender     | Email                      | Phone               |\n");
+    printf("|============|=============|============================|=======================|============|============================|=====================|\n");
 }
 void printStudent(int length, struct Student sv[]){
     int i;
     for(i=0;i<length;i++){
-    printf("| %-11s| %-12s| %-27s| %02d/%02d/%04d            | %-11s| %-27s| %-20s| %-20s|\n",
+    printf("| %-11s| %-12s| %-27s| %02d/%02d/%04d            | %-11s| %-27s| %-20s|\n",
             sv[i].studentId,
             sv[i].classroomId,
             sv[i].fullName,
@@ -150,7 +150,7 @@ void printStudent(int length, struct Student sv[]){
             sv[i].email,
             sv[i].phone,
             sv[i].password);
-            printf("|------------|-------------|----------------------------|-----------------------|------------|----------------------------|---------------------|---------------------|\n");
+            printf("|------------|-------------|----------------------------|-----------------------|------------|----------------------------|---------------------|\n");
     }
 }
 void saveStudentToFile(int length, struct Student sv[]){
@@ -747,6 +747,13 @@ void loginAdmin(){
     fclose(fptr);
     printf("Admin credentials saved successfully.\n");
 }
+void endProgram(){
+	printf("\n");
+	printf("\tExiting program...\n");
+	printf("\n");
+	printf("\n=========Thank You=========\n");
+	printf("=========See You Soon======\n");
+}
 void menuClass(){
 	printf("\n***Classroom Management System Using C***\n");
     printf("\n");
@@ -763,6 +770,3 @@ void menuClass(){
     printf("\t[0] Back.\n");
     printf("\t======================\n");
 }
-
-
-
