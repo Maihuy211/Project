@@ -6,15 +6,21 @@ int main(int argc, char *argv[]) {
     int choice, choice2, choice3, choice5, choice7;
     int studentCount= 3;
     int teacherCount= 3;
+    int classCount=3;
     struct Student students[50]={
-    	{"1","ENG24C","Mai Van Huy", {25, 11, 2006}, 1, "maihuylc@gmail.com", "0971*****", "pass123"},
-        {"2","ENG24D","Nguyen Van A", {21,10, 2006}, 1, "abce123@gmail.com", "0987654321", "pass124"},
-        {"3","ENG24E","Nguyen Van B", {6, 5, 2006}, 1, "abcd123@gmail.com", "0987654322", "pass125"}
+    	{"1","403","Mai Van Huy", {25, 11, 2006}, 1, "maihuylc@gmail.com", "0971*****", "pass123"},
+        {"2","403","Nguyen Van A", {21,10, 2006}, 1, "abce123@gmail.com", "0987654321", "pass124"},
+        {"3","403","Nguyen Van B", {6, 5, 2006}, 1, "abcd123@gmail.com", "0987654322", "pass125"}
     };
     struct Teacher teachers[50]={
-        {"1","ENG24D","Nguyen Van A", {2,30,1998}, 1, "abct123@gmail.com", "098765444", "pass124"},
-        {"2","ENG24E","Nguyen Van B", {6,5,2000}, 1, "abcf123@gmail.com", "0987654345", "pass156"},
-        {"3","ENG24V","Nguyen Van C", {6,5,2000}, 1, "aocf123@gmail.com", "0986745464", "pass116"},
+        {"4","403","Nguyen Van A", {2,30,1998}, 1, "abct123@gmail.com", "098765444", "pass124"},
+        {"5","405","Nguyen Van B", {6,5,2000}, 1, "abcf123@gmail.com", "0987654345", "pass156"},
+        {"6","404","Nguyen Van C", {6,5,2000}, 1, "aocf123@gmail.com", "0986745464", "pass116"},
+    };
+    struct Classroom classrooms[50]={
+    	{"403", "IT101", "4", "Nguyen Van A"},
+        {"405", "IT102", "5", "Nguyen Van B"},
+        {"404", "ENG105", "6", "Nguyen Van C"}
     };
     do {
         menuStart();
@@ -68,6 +74,8 @@ int main(int argc, char *argv[]) {
                                 	case 1:
                                 		break;
                                 	case 2:
+                                		printHeader3();
+                                		printClass(classCount,classrooms);
                                 		break;
                                 	case 3:
                                 		break;
@@ -111,7 +119,7 @@ int main(int argc, char *argv[]) {
                                     	searchTeacher(teacherCount, teachers);
                                     	break;
                                     case 6:
-                                    	
+                                    	addTeacherClass(classCount, teachers, classrooms);
                                     	break;
                                 	case 0:
                                 		break;

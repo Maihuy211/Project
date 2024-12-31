@@ -14,8 +14,9 @@ struct Student{
 };
 struct Classroom{
 	char classroomId[10];
-	char teacherID[10];
+	char teacherId[10];
 	char classroomName[20];
+	char fullName[30];
 	struct Student students[];
 };
 struct Teacher{
